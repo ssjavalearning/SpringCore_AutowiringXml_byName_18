@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
+
+	<bean id="person" class="com.suraj.spring.beans.Person" autowire="byName">
+		<property name="personId" value="1001" />
+		<property name="personName" value="suraj singh" />
+		<!-- <property name="passport" ref="passport" /> -->
+	</bean>
+	
+	<!-- if bean id is not matched with bean property name then passport won't be injected to Person -->
+	<bean id="passport" class="com.suraj.spring.beans.Passport">
+		<property name="passportNum" value="25031991" />
+		<property name="name" value="Suraj" />
+	</bean>
+	
+	<bean id="passport2" class="com.suraj.spring.beans.Passport">
+		<property name="passportNum" value="25031991" />
+		<property name="name" value="Suraj" />
+	</bean>
+</beans>
